@@ -1,0 +1,39 @@
+<header class="site-header">
+  <div class="wrapper">
+  {%- comment -%}
+  Sort pages by `nav_order` front-matter so the nav respects nav_order values.
+  If `site.minima.nav_pages` is configured use that, otherwise fall back to the
+  sorted page paths.
+  {%- endcomment -%}
+  {%- assign sorted_pages = site.pages | sort: "nav_order" -%}
+  {%- assign default_paths = sorted_pages | map: "path" -%}
+  {%- assign page_paths = site.minima.nav_pages | default: default_paths -%}
+  {%- assign page_titles = sorted_pages | map: 'title' | compact %}
+  <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
+    <img src="{{ '/assets/images/pil.svg' | relative_url }}" alt="{{ site.title | escape }} logo" height="24em" style="margin-right: 0.4em;" />
+    {%- assign full_title = site.title | default: "" -%}
+    {%- assign short_title = site.title_short | default: "" -%}
+    <span class="site-title-full">{{ full_title | escape }}</span>
+    {%- if short_title != "" -%}
+      <span class="site-title-short">{{ short_title | escape }}</span>
+    {%- endif -%}
+  </a>
+
+    {%- unless page_titles == empty %}
+        <!-- Mobile toggle (checkbox + label) placed before the nav so we can target the nav with a sibling selector -->
+        <input class="nav-trigger" id="nav-trigger" type="checkbox" aria-hidden="true" />
+        <label class="menu-icon" for="nav-trigger" aria-hidden="true">
+          <!-- simple hamburger icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+            <rect y="5" width="24" height="2" rx="1"></rect>
+            <rect y="11" width="24" height="2" rx="1"></rect>
+            <rect y="17" width="24" height="2" rx="1"></rect>
+          </svg>
+        </label>
+
+      <nav class="site-nav">
+        {% include nav-items.html paths = page_paths %}
+      </nav>
+    {%- endunless %}
+  </div>
+</header>

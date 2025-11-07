@@ -1,0 +1,14 @@
+<div class="trigger nav-items">
+  {%- for path in include.paths -%}
+  {%- assign hyperpage = site.pages | where: "path", path | first -%}
+  {%- comment -%}
+    Skip pages that explicitly opt out of the nav. Supported front-matter flags:
+    - hide_from_nav: true
+    - exclude_from_nav: true
+    - nav: false
+  {%- endcomment -%}
+  {%- if hyperpage.title and hyperpage.hide_from_nav != true and hyperpage.exclude_from_nav != true and hyperpage.nav != false -%}
+    <a class="page-link" href="{{ hyperpage.url | relative_url }}">{{ hyperpage.title | escape }}</a>
+  {%- endif -%}
+  {%- endfor %}
+</div>

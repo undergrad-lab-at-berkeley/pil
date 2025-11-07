@@ -1,0 +1,11 @@
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- comment -%} Allow the jekyll-seo-tag plugin to inject meta tags {%- endcomment -%}
+  {% seo %}
+
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <link type="application/atom+xml" rel="alternate" href="{{ '/feed.xml' | absolute_url }}" title="{{ site.title }}" />
+
+  {%- comment -%} Project-specific head additions (favicons, manifest) {%- endcomment -%}
+  {% include custom-head.html %}
