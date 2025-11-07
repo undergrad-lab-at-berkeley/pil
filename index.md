@@ -18,7 +18,7 @@ layout: home
 	<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;padding:1rem;text-align:center;">
 		<div>
 			<h1 style="margin:0;font-size:1.6rem">Paul L. Richards Physics Innovation Laboratory</h1>
-			<p>student makerspace - fusion of stellar, curious minds</p>
+			<p>student makerspace - hub for curious minds</p>
 		</div>
 	</div>
 </div>
@@ -31,5 +31,6 @@ layout: home
 - Student run under [ULAB](https://ulab.studentorg.berkeley.edu/) and [Physics Department](https://physics.berkeley.edu/academics/paul-l-richards-physics-innovation-laboratory). 
 
 
+<iframe src="https://calendar.google.com/calendar/embed?src=c_ef8a890603384e03165771f8098a97fe515427023236bf954fb037a993d93392%40group.calendar.google.com&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
 
