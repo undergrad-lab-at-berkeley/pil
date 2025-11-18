@@ -1,7 +1,9 @@
-<!-- ---
+---
 layout: page
 title: Examples
 permalink: /examples/
-nav_order: 3
+nav: false
 ---
- -->
+
+Coming soon!
+
